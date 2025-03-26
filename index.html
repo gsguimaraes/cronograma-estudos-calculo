@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cronograma – Cálculo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            padding: 2rem;
+            background-color: #fdfdfd;
+            color: #333;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        summary {
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 1.5rem;
+        }
+        li {
+            margin: 0.4rem 0;
+        }
+        input[type="checkbox"] {
+            margin-right: 0.6rem;
+        }
+        .section {
+            margin-bottom: 1.5rem;
+        }
+        .note {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    
+<h1>📚 Cronograma — Cálculo: Funções e Limites</h1>
+<p><strong>Período:</strong> 27/03/2025 a 29/04/2025</p>
+
+<div style="margin-top:2rem;">
+    <label for="progressBar"><strong>📊 Progresso Total:</strong></label>
+    <div style="background-color: #eee; border-radius: 20px; overflow: hidden; height: 24px; width: 100%; margin: 0.5rem 0;">
+        <div id="progressBar" style="height: 100%; width: 0%; background-color: #3498db; text-align: center; color: white; line-height: 24px;">0%</div>
+    </div>
+</div>
+
+<br>
+
+<div class="section">
+<details>
+<summary>🔹 Semana 1</summary>
+<ul>
+<li><input type="checkbox" id="calc1"> 27/03 - Quatro Maneiras de Representar uma Função (Seção 1.1, pág. 3–14)</li>
+<li><input type="checkbox" id="calc2"> 28/03 - Quatro Maneiras de Representar uma Função (Seção 1.1, pág. 3–14)</li>
+<li><input type="checkbox" id="calc3"> 31/03 - Modelos Matemáticos: uma Lista de Funções Essenciais (Seção 1.2, pág. 15–27)</li>
+<li><input type="checkbox" id="calc4"> 01/04 - Modelos Matemáticos: uma Lista de Funções Essenciais (Seção 1.2, pág. 15–27)</li>
+<li><input type="checkbox" id="calc5"> 02/04 - Novas Funções a partir de Antigas (Seção 1.3, pág. 28–35)</li>
+</ul>
+</details>
+<details>
+<summary>🔹 Semana 2</summary>
+<ul>
+<li><input type="checkbox" id="calc6"> 03/04 - Novas Funções a partir de Antigas (Seção 1.3, pág. 28–35)</li>
+<li><input type="checkbox" id="calc7"> 04/04 - Calculadoras Gráficas e Computadores (Seção 1.4, pág. 36–42)</li>
+<li><input type="checkbox" id="calc8"> 07/04 - Calculadoras Gráficas e Computadores (Seção 1.4, pág. 36–42)</li>
+<li><input type="checkbox" id="calc9"> 08/04 - Funções Exponenciais (Seção 1.5, pág. 43–49)</li>
+<li><input type="checkbox" id="calc10"> 09/04 - Funções Exponenciais (Seção 1.5, pág. 43–49)</li>
+</ul>
+</details>
+<details>
+<summary>🔹 Semana 3</summary>
+<ul>
+<li><input type="checkbox" id="calc11"> 10/04 - Funções Inversas e Logaritmos (Seção 1.6, pág. 50–61)</li>
+<li><input type="checkbox" id="calc12"> 11/04 - Funções Inversas e Logaritmos (Seção 1.6, pág. 50–61)</li>
+<li><input type="checkbox" id="calc13"> 14/04 - Revisão (pág. 62)</li>
+<li><input type="checkbox" id="calc14"> 15/04 - Princípios para a Resolução de Problemas (pág. 65)</li>
+<li><input type="checkbox" id="calc15"> 16/04 - Os Problemas da Tangente e da Velocidade (Seção 2.1, pág. 73–77)</li>
+</ul>
+</details>
+<details>
+<summary>🔹 Semana 4</summary>
+<ul>
+<li><input type="checkbox" id="calc16"> 17/04 - O Limite de uma Função (Seção 2.2, pág. 78–88)</li>
+<li><input type="checkbox" id="calc17"> 18/04 - O Limite de uma Função (Seção 2.2, pág. 78–88)</li>
+<li><input type="checkbox" id="calc18"> 21/04 - Cálculos Usando Propriedades dos Limites (Seção 2.3, pág. 89–96)</li>
+<li><input type="checkbox" id="calc19"> 22/04 - Cálculos Usando Propriedades dos Limites (Seção 2.3, pág. 89–96)</li>
+<li><input type="checkbox" id="calc20"> 23/04 - A Definição Precisa de Limite (Seção 2.4, pág. 97–106)</li>
+</ul>
+</details>
+<details>
+<summary>🔹 Semana 5</summary>
+<ul>
+<li><input type="checkbox" id="calc21"> 24/04 - A Definição Precisa de Limite (Seção 2.4, pág. 97–106)</li>
+<li><input type="checkbox" id="calc22"> 25/04 - Continuidade (Seção 2.5, pág. 107–116)</li>
+<li><input type="checkbox" id="calc23"> 28/04 - Continuidade (Seção 2.5, pág. 107–116)</li>
+<li><input type="checkbox" id="calc24"> 29/04 - Limites no Infinito; Assíntotas Horizontais (Seção 2.6, pág. 117)</li>
+</ul>
+</details>
+</div>
+    
+<script>
+    const updateProgress = () => {
+        const all = document.querySelectorAll('input[type="checkbox"]');
+        const checked = Array.from(all).filter(cb => cb.checked).length;
+        const percent = Math.round((checked / all.length) * 100);
+        const bar = document.getElementById('progressBar');
+        bar.style.width = percent + '%';
+        bar.textContent = percent + '%';
+    };
+
+    document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+        cb.addEventListener('change', updateProgress);
+    });
+
+    window.addEventListener('load', updateProgress);
+</script>
+
+<script>
+    // Salvar estado dos checkboxes localmente
+    document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+        const saved = localStorage.getItem(cb.id);
+        if (saved) cb.checked = JSON.parse(saved);
+        cb.addEventListener('change', () => {
+            localStorage.setItem(cb.id, cb.checked);
+        });
+    });
+</script>
+
+</body>
+</html>
